@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invest Smarter. Own in Dubai.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-main: #FFFFFF;
+      --bg-section: #FAFAFA;
+      --gold: #D4AF37;
+      --gold-gradient: linear-gradient(
+          145deg,
+          #ffd700 0%,
+          #ffed4a 12%,
+          #f4d03f 25%,
+          #d4af37 40%,
+          #b8860b 50%,
+          #daa520 60%,
+          #f4d03f 75%,
+          #ffed4a 88%,
+          #ffd700 100%
+      );
+      --gold-btn: linear-gradient(135deg, 
+          #ffd700 0%,
+          #ffed4a 15%,
+          #d4af37 35%,
+          #b8860b 50%,
+          #daa520 65%,
+          #f4d03f 85%,
+          #ffd700 100%
+      );
+
+
+      --gold-step: 
+    linear-gradient(135deg, #ffd700 0%, #ffed4a 15%, #d4af37 35%, #b8860b 50%, #daa520 65%, #f4d03f 85%, #ffd700 100%),
+    linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+
+
+
+
+      --gold-light: rgba(212, 175, 55, 0.15);
+      --charcoal: #1C1C1C;
+      --white: #FFFFFF;
+      --text-primary: #1C1C1C;
+      --text-secondary: #666666;
+      --marble-overlay: rgba(255, 255, 255, 0.9);
+      --font-titles: 'Playfair Display', serif;
+      --font-subtitles: 'Lora', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+  body {
+    font-family: var(--font-body);
+    background: url('content/marble_reference/marble.jpg') center center/cover no-repeat fixed, var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  * { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+    
+    /* Marble texture background */
+    .marble-bg {
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0.9 0 0 0 0 0.9 0 0 0 0 0.9 0 0 0 0.1 0"/></filter></defs><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
+      background-size: 200px 200px;
+    }
+    
+    .hero-logo {
+      display: block;
+      margin: 0 auto 32px auto;
+      width: 120px;
+      max-width: 22vw; 
+      height: auto;
+      filter: drop-shadow(0 4px 24px rgba(212,175,55,0.18));
+      transition: filter 0.4s cubic-bezier(0.25,0.8,0.25,1), transform 0.4s cubic-bezier(0.25,0.8,0.25,1);
+    }
+    
+    .hero-logo.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Base Layout */
+    header, section {
+      padding: 80px 5vw;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-section);
+      border-radius: 24px;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--marble-overlay);
+      z-index: -1;
+    }
+    
+    /* Typography */
+    h1 {
+      font-family: var(--font-titles);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--text-primary);
+      margin-bottom: 0.5em;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+    
+    h2 {
+      font-family: var(--font-titles);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--text-primary);
+      margin-bottom: 0.8em;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+    }
+    
+    h3 {
+      font-family: var(--font-subtitles);
+      font-size: clamp(1.3rem, 3vw, 1.6rem);
+      color: var(--text-primary);
+      margin-bottom: 0.5em;
+      font-weight: 600;
+    }
+    
+    .subheadline-hero {
+      font-family: var(--font-subtitles);
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--text-secondary);
+      margin-bottom: 1.5em;
+      font-weight: 400;
+      max-width: 800px;
+      line-height: 1.5;
+    }
+    
+    .subheadline {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      margin-bottom: 1.5em;
+      font-weight: 400;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+    
+    /* CTA Buttons */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold-btn);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 18px;
+      margin-right: 15px;
+      box-shadow: 0 4px 20px var(--gold-light);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      min-height: 56px;
+      font-family: var(--font-body);
+    }
+    
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--charcoal);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    .cta-btn:hover {
+      color: var(--white);
+      box-shadow: 0 8px 30px rgba(212,175,55,0.4);
+      transform: translateY(-2px);
+    }
+    
+    .cta-btn:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    
+    .cta-btn:focus {
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .stat-card {
+      background: var(--white);
+      padding: 30px 20px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gold-gradient);
+      border-radius: 16px 16px 0 0;
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.2);
+    }
+    
+    .stat-number {
+      font-family: var(--font-titles);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    
+    /* Process Timeline */
+    .process-timeline {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin: 60px 0;
+      padding: 20px 0;
+    }
+    
+    .process-timeline::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 50px;
+      right: 50px;
+      height: 3px;
+      background: var(--gold-gradient);
+      z-index: 1;
+    }
+    
+    .process-step {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      flex: 1;
+      max-width: 250px;
+    }
+    
+    .process-step .step-circle {
+      width: 60px;
+      height: 60px;
+      background: var(--gold-step);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px var(--gold-light);
+    }
+    
+    .process-step .step-content h3 {
+      font-family: var(--font-subtitles);
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    
+    .process-step .step-content p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: var(--text-secondary);
+    }
+    
+    /* Benefits List */
+    ul.benefits-list {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+      display: grid;
+      gap: 18px;
+    }
+    
+    ul.benefits-list li {
+      padding: 20px 25px;
+      background: var(--white);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    
+    ul.benefits-list li::before {
+      content: '✓';
+      color: var(--gold);
+      margin-right: 15px;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+    
+    ul.benefits-list li:hover {
+      transform: translateX(10px);
+      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.15);
+    }
+    
+    /* Hero Section */
+    #hero {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 5vw;
+      margin-top: 40px;
+      background: linear-gradient(135deg, var(--white) 0%, var(--bg-section) 100%);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.1s cubic-bezier(0.25,0.8,0.25,1), transform 1.1s cubic-bezier(0.25,0.8,0.25,1);
+    }
+    
+    #hero.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+    .hero-logo {
+      display: block;
+      margin: 0 auto 32px auto;
+      width: 120px;
+      max-width: 22vw; 
+      height: auto;
+      filter: drop-shadow(0 4px 24px rgba(212,175,55,0.18));
+      transition: filter 0.4s cubic-bezier(0.25,0.8,0.25,1), transform 0.4s cubic-bezier(0.25,0.8,0.25,1);
+    }
+    
+    /* Contact Form */
+    .contact-form {
+      display: grid;
+      gap: 25px;
+      margin-top: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: var(--white);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-group label {
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 16px;
+      background: var(--bg-section);
+      border: 2px solid rgba(212, 175, 55, 0.2);
+      border-radius: 12px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      min-height: 52px;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px var(--gold-light);
+    }
+    
+    .submit-btn {
+      background: var(--gold-btn);
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 18px 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+      min-height: 56px;
+      box-shadow: 0 4px 20px var(--gold-light);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      font-family: var(--font-body);
+    }
+    
+    .submit-btn:hover {
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+      transform: translateY(-2px);
+    }
+    
+    /* Contact Options */
+    .contact-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .contact-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.2);
+    }
+    
+    .contact-card i {
+      font-size: 2rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+    
+    .contact-card h4 {
+      font-family: var(--font-subtitles);
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+    
+    .contact-card p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    
+    /* Button Groups */
+    .cta-button-group {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+    
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+    
+    .whatsapp-float:hover {
+      background-color: #20ba5a;
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      animation: none;
+    }
+    
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+    
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 4px solid var(--gold-light);
+      border-top: 4px solid var(--gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      header, section {
+        padding: 50px 6vw;
+        margin-bottom: 25px;
+        border-radius: 16px;
+      }
+      
+      .cta-btn {
+        width: 100%;
+        margin-bottom: 15px;
+        margin-right: 0;
+      }
+      
+      .cta-button-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+      }
+      
+      .process-timeline {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .process-timeline::before {
+        top: 0;
+        bottom: 0;
+        left: 30px;
+        width: 3px;
+        height: calc(100% - 60px);
+        right: auto;
+      }
+      
+      .process-step {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        width: 100%;
+        text-align: left;
+      }
+      
+      .process-step .step-circle {
+        margin: 0 25px 0 0;
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+      }
+      
+      .process-step .step-content {
+        flex: 1;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .contact-form {
+        padding: 30px 20px;
+      }
+      
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .process-step .step-circle {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+      }
+      
+      .contact-form {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+  
+  <div class="smooth-scroll">
+    <header id="hero">
+      <div class="hero-content">
+        <img src="content/logo/logo.png" alt="Dubai Estate Logo" class="hero-logo">
+        <h1>
+          Invest Smarter. 
+          <span style="background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">
+            Own in Dubai.
+          </span>
+        </h1>
+        <div class="subheadline-hero">
+          We connect European buyers to curated real estate opportunities in the world's most dynamic property market.
+        </div>
+        <div class="cta-button-group">
+          <a href="#inquiry" class="cta-btn">
+            <i class="fas fa-chart-line" style="margin-right: 10px;"></i>
+            Request Investment Portfolio
+          </a>
+          <a href="#projects" class="cta-btn">
+            <i class="fas fa-eye" style="margin-right: 10px;"></i>
+            See Available Projects
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section id="why-exist">
+      <h2>Why We Exist</h2>
+      <p class="subheadline">
+        We believe that Dubai is the smartest place in the world to invest in real estate today.<br>
+        Not because it's flashy — but because it makes sense.<br><br>
+        <strong>Low taxes. Strong rental yields. Global demand. Developer flexibility.</strong> And a market designed for growth, not stagnation.<br><br>
+        We built this service for buyers who think ahead. People who want more than just a property - they want <em>position</em>.<br>
+        Dubai gives them that. And we make sure they enter it right.
+      </p>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">0%</div>
+          <div class="stat-label">Property Tax</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6-9%</div>
+          <div class="stat-label">Rental Yields</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">20%</div>
+          <div class="stat-label">Price Growth YoY</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">10-20%</div>
+          <div class="stat-label">Down Payment</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-we-connect">
+      <h2>How We Connect Buyers to Real Estate That Performs</h2>
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="step-circle">1</div>
+          <div class="step-content">
+            <h3>We scout the deals</h3>
+            <p>Off-plan, undervalued, or high-ROI units from trusted developers</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">2</div>
+          <div class="step-content">
+            <h3>We pre-qualify projects</h3>
+            <p>We only show you opportunities we would invest in ourselves</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">3</div>
+          <div class="step-content">
+            <h3>You choose, we connect</h3>
+            <p>You talk directly with the developer or agency - no middleman markup</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-circle">4</div>
+          <div class="step-content">
+            <h3>You invest on your terms</h3>
+            <p>With clarity, documents, timelines, and full support if needed</p>
+          </div>
+        </div>
+      </div>
+      
+      <ul class="benefits-list">
+        <li>No agent spam</li>
+        <li>No fake listings</li>
+        <li>No vague "luxury" promises</li>
+      </ul>
+    </section>
+
+    <section id="who-we-are">
+      <h2>Built by Buyers. For Buyers.</h2>
+      <p class="subheadline">
+        We're not real estate agents.<br>
+        We're market operators - buyers who've done this ourselves and know where the leverage is.<br><br>
+        We built this network to help people like us: serious, focused, and ready to invest with purpose - not pressure.<br><br>
+        <strong>Founder: Konstantinos Lelekas</strong><br>
+        Dubai-connected. European-rooted. Network-focused.
+      </p>
+      
+      <div class="contact-options">
+        <div class="contact-card">
+          <i class="fas fa-handshake"></i>
+          <h4>Direct Access</h4>
+          <p>Connect directly with developers and verified agencies</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Vetted Opportunities</h4>
+          <p>Every project is personally evaluated by our team</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-chart-bar"></i>
+          <h4>Market Intelligence</h4>
+          <p>Real-time insights from our Dubai network</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-dubai">
+      <h2>Why Invest in Dubai - Not Somewhere Else?</h2>
+      <ul class="benefits-list">
+        <li><strong>0% Property Tax</strong> - No annual tax on real estate</li>
+        <li><strong>High Rental Yields</strong> - 6-9% vs 2-4% in most of Europe</li>
+        <li><strong>Global Business Hub</strong> - Rising demand, expat population, and investor visas</li>
+        <li><strong>Developer Payment Plans</strong> - Pay 10-20% upfront, the rest in stages</li>
+        <li><strong>Currency Hedge</strong> - Euro buyers gain extra leverage with AED peg to USD</li>
+        <li><strong>Resale Potential</strong> - Dubai properties are internationally liquid</li>
+      </ul>
+      <p class="subheadline" style="margin-top: 30px; text-align: center; font-style: italic;">
+        While other markets plateau, Dubai is scaling - and smart capital knows it.
+      </p>
+    </section>
+
+    <section id="inquiry">
+      <h2>Ready to Learn More?</h2>
+      <div class="subheadline">Let us show you 2-3 real opportunities based on your budget and goals.</div>
+      
+      <div class="contact-options">
+        <div class="contact-card">
+          <i class="fab fa-whatsapp"></i>
+          <h4>WhatsApp</h4>
+          <p>+30 698 805 1698</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h4>Email</h4>
+          <p>info@dubainvest.com</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-calendar-alt"></i>
+          <h4>Book a Call</h4>
+          <p>Schedule consultation</p>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <form action="https://formspree.io/f/mjkrpepy" method="POST" id="contactForm">
+          <input type="text" name="_gotcha" style="display:none !important" tabindex="-1" autocomplete="off">
+          
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+30 123 456 7890">
+          </div>
+          
+          <div class="form-group">
+            <label for="budget">Investment Budget</label>
+            <select id="budget" name="budget">
+              <option value="">Select budget range</option>
+              <option value="100k-250k">€100k - €250k</option>
+              <option value="250k-500k">€250k - €500k</option>
+              <option value="500k-1m">€500k - €1M</option>
+              <option value="1m+">€1M+</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Tell us about your investment goals *</label>
+            <textarea id="message" name="message" rows="4" placeholder="What type of property interests you? Are you looking for rental income, capital appreciation, or both?" required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">
+            Request My Portfolio
+          </button>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a 
+    href="https://wa.me/306988051698?text=Hi%2C%20I%27m%20interested%20in%20Dubai%20real%20estate%20investment%20opportunities" 
+    class="whatsapp-float" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    aria-label="Contact us on WhatsApp"
+    title="Chat with us on WhatsApp"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script>
+
+    window.scrollTo(0, 0);
+
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Page load animations
+    window.addEventListener('load', function() {
+      // Hide preloader
+      gsap.to("#preloader", {
+        opacity: 0,
+        duration: 0.5,
+        onComplete: function() {
+          document.getElementById("preloader").style.display = "none";
+          initAnimations();
+        }
+      });
+      
+      // Animate hero section
+      setTimeout(function() {
+        document.getElementById('hero').classList.add('visible');
+      }, 200);
+    });
+    
+    function initAnimations() {
+      // Animate hero elements
+      gsap.from('#hero h1', { 
+        y: 30, 
+        opacity: 0, 
+        duration: 0.8, 
+        delay: 0.3,
+        ease: "power2.out" 
+      });
+      
+      gsap.from('#hero .subheadline-hero', { 
+        y: 20, 
+        opacity: 0, 
+        duration: 0.8, 
+        delay: 0.5,
+        ease: "power2.out" 
+      });
+      
+      gsap.from('#hero .cta-button-group', { 
+        y: 20, 
+        opacity: 0, 
+        duration: 0.8, 
+        delay: 0.7,
+        ease: "power2.out" 
+      });
+      
+      // Animate sections on scroll
+      gsap.utils.toArray('section').forEach(section => {
+        gsap.from(section, {
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          },
+          y: 50,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out"
+        });
+      });
+      
+      // Animate stat cards
+      gsap.utils.toArray('.stat-card').forEach((card, index) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          },
+          y: 30,
+          opacity: 0,
+          scale: 0.9,
+          duration: 0.6,
+          delay: index * 0.1,
+          ease: "back.out(1.7)"
+        });
+      });
+      
+      // Animate contact cards
+      gsap.utils.toArray('.contact-card').forEach((card, index) => {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none"
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          delay: index * 0.1,
+          ease: "power2.out"
+        });
+      });
+      
+      // CTA button hover effects
+      const ctaButtons = document.querySelectorAll('.cta-btn');
+      ctaButtons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+          gsap.to(button, {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+        button.addEventListener('mouseleave', () => {
+          gsap.to(button, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        });
+      });
+    }
+    
+    // Form submission handling
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contactForm');
+      
+      if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+          e.preventDefault();
+          
+          const submitBtn = contactForm.querySelector('.submit-btn');
+          const originalText = submitBtn.textContent;
+          
+          // Show loading state
+          submitBtn.textContent = 'Sending...';
+          submitBtn.disabled = true;
+          
+          try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+            
+            if (response.ok) {
+              submitBtn.textContent = 'Thank You! We\'ll Be In Touch';
+              submitBtn.style.background = '#2ecc71';
+              
+              setTimeout(() => {
+                contactForm.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+                submitBtn.disabled = false;
+              }, 3000);
+            } else {
+              throw new Error('Form submission failed');
+            }
+          } catch (error) {
+            submitBtn.textContent = 'Error - Please Try Again';
+            submitBtn.style.background = '#e74c3c';
+            
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.style.background = '';
+              submitBtn.disabled = false;
+            }, 3000);
+          }
+        });
+      }
+      
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
