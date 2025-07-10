@@ -9,9 +9,66 @@
   <link rel="icon" type="image/png" sizes="192x192" href="content/favicon/favicon_io/android-chrome-192x192.png">
   <!-- Apple Touch Icon -->
   <link rel="apple-touch-icon" href="content/favicon/favicon_io/apple-touch-icon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Critical CSS - Font Awesome Icons (Optimized for Performance) */
+    .fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+    
+    /* Optimized Font Awesome @font-face with font-display: swap */
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('content/fonts/fontawesome-free-6.7.2-web/webfonts/fa-regular-400.woff2') format("woff2"),
+           url('content/fonts/fontawesome-free-6.7.2-web/webfonts/fa-regular-400.ttf') format("truetype");
+    }
+    
+    @font-face {
+      font-family: "Font Awesome 6 Free";
+      font-style: normal;
+      font-weight: 900;
+      font-display: swap;
+      src: url('content/fonts/fontawesome-free-6.7.2-web/webfonts/fa-solid-900.woff2') format("woff2"),
+           url('content/fonts/fontawesome-free-6.7.2-web/webfonts/fa-solid-900.ttf') format("truetype");
+    }
+    
+    @font-face {
+      font-family: "Font Awesome 6 Brands";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('content/fonts/fontawesome-free-6.7.2-web/webfonts/fa-brands-400.woff2') format("woff2"),
+           url('content/fonts/fontawesome-free-6.7.2-web/webfonts/fa-brands-400.ttf') format("truetype");
+    }
+    
+    .fas:before{content:var(--fa)}.fas{font-family:"Font Awesome 6 Free";font-weight:900}
+    .fab{font-family:"Font Awesome 6 Brands";font-weight:400}
+    .fa-lightbulb{--fa:"\f0eb"}
+    .fa-file-invoice-dollar{--fa:"\f571"}
+    .fa-phone-alt{--fa:"\f879"}
+    .fa-whatsapp{--fa:"\f232"}
+    
+    :host,:root{--fa-style-family-brands:"Font Awesome 6 Brands";--fa-font-brands:normal 400 1em/1 "Font Awesome 6 Brands"}
+    :host,:root{--fa-font-regular:normal 400 1em/1 "Font Awesome 6 Free"}
+    :host,:root{--fa-style-family-classic:"Font Awesome 6 Free";--fa-font-solid:normal 900 1em/1 "Font Awesome 6 Free"}
+
+    /* Local Montserrat Font Faces (already optimized) */
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('content/fonts/montserrat-v30-latin/montserrat-v30-latin-regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Montserrat';
+      src: url('content/fonts/montserrat-v30-latin/montserrat-v30-latin-700.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       --bg-main: #FFFFFF;
       --bg-section: #FAFAFA;
@@ -700,7 +757,7 @@
   <div class="smooth-scroll">
     <header id="hero">
       <div class="hero-content">
-        <img src="content/logo/logo.png" alt="Dubai Estate Logo" class="hero-logo">
+        <img src="content/logo/logo.webp" alt="Dubai Estate Logo" class="hero-logo">
         <h1>
           Invest Smarter. 
           <span style="background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;">
